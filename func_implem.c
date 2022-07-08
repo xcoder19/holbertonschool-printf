@@ -25,7 +25,7 @@ int print_percent(va_list *ap)
 
 	(void)ap;
 
-	write(1, "%", 1);
+	write(1, "%%", 1);
 	return (1);
 }
 int print_newline(va_list *ap)
