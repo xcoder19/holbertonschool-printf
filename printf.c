@@ -5,7 +5,7 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int newLine = 0;
-	char k;
+
 	va_start(ap, format);
 
 	while (*format != '\0')
@@ -13,10 +13,15 @@ int _printf(const char *format, ...)
 
 		if (*format == '%')
 		{
+
 			newLine = 1;
 
-			k = *(format + 1);
+			char k = *(format + 1);
 			get_op_func(k)(&ap);
+		}
+		if (*format != '%' && *(format - 1) != '%')
+		{
+			write(1, format, 1);
 		}
 
 		format++;

@@ -22,13 +22,18 @@ int print_char(va_list *ap)
 }
 int print_percent(va_list *ap)
 {
-	(void)ap;
+
+	char c;
+
+	c = va_arg(*ap, int);
 	write(1, "%", 1);
 	return (1);
 }
 int print_newline(va_list *ap)
 {
-	(void)ap;
+	char c;
+
+	c = va_arg(*ap, int);
 	write(1, "\n", 1);
 	return (1);
 }
