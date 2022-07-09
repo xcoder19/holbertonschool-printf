@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * _strlen - count length of string
+ * @s: pointer to string
+ * Return: count
+ */
 int _strlen(const char *s)
 {
 	int i;
@@ -8,19 +13,11 @@ int _strlen(const char *s)
 
 	return (i);
 }
-char *itoa(int val, int base)
-{
-
-	static char buf[32] = {0};
-
-	int i = 30;
-
-	for (; val && i; --i, val /= base)
-
-		buf[i] = "0123456789abcdef"[val % base];
-
-	return (&buf[i + 1]);
-}
+/**
+ * print_char - print char
+ * @ap: valist
+ * Return: 1
+ */
 int print_char(va_list *ap)
 {
 	char c;
@@ -29,6 +26,11 @@ int print_char(va_list *ap)
 	write(1, &c, 1);
 	return (1);
 }
+/**
+ * print_percent - print %
+ * @ap: valist pointer
+ * Return: 1
+ */
 int print_percent(va_list *ap)
 {
 

@@ -1,6 +1,11 @@
 #include "main.h"
 #include <unistd.h>
 #include <string.h>
+/**
+ * _printf - printf implementation
+ * @format: pointer to string
+ * Return: number of chars writen
+ */
 int _printf(const char *format, ...)
 {
 	if (format != NULL)

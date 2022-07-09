@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * get_op_func - return the correct func to use
+ * @s: operation
+ * Return: pointer to a function
+ */
 int (*get_op_func(const char s))(va_list *)
 {
 
