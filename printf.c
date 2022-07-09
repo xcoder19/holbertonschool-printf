@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 	char k;
 	if (format == NULL)
 	{
-		return (0);
+		return (-1);
 	}
 
 	va_start(ap, format);
