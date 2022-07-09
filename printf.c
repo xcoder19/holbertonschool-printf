@@ -24,6 +24,7 @@ int _printf(const char *format, ...)
 				if (k == '%')
 				{
 					flag = 1;
+					format++;
 				}
 				if ((get_op_func(k)) != NULL)
 				{
@@ -54,5 +55,6 @@ int _printf(const char *format, ...)
 		}
 		return (len);
 	}
-	return (-1);
+
+	return (NULL);
 }
