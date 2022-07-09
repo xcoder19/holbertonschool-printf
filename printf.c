@@ -29,10 +29,6 @@ int _printf(const char *format, ...)
 
 		format++;
 	}
-	// if (*(format - 1) == '\n' && newLine)
-	// {
-	// 	write(1, "\n", 1);
-	// }
 
 	va_end(ap);
 	return (0);
