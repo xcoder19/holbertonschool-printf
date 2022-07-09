@@ -24,5 +24,6 @@ int print_float(va_list *ap);
 int print_str(va_list *ap);
 int print_percent(va_list *ap);
 int _strlen(const char *s);
+void func1(const char *format, int *flag);
 int (*get_op_func(const char s))(va_list *ap);
 #endif
