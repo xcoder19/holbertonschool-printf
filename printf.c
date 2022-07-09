@@ -7,7 +7,7 @@ int _printf(const char *format, ...)
 	int len = 0;
 	char k;
 	int m = _strlen(format);
-	int flag = 0;
+
 	const char *p = format;
 
 	if (format == NULL)
@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 
 		if (*format == '%')
 		{
-			flag = 1;
 
 			k = *(format + 1);
 			if ((get_op_func(k)) != NULL)
@@ -31,23 +30,14 @@ int _printf(const char *format, ...)
 				len = len + (get_op_func(k)(&ap));
 			};
 		}
-		if (*format != '%' && *(format - 1) != '%' && *format != '\n')
+
+		if (*format != '%' && *(format - 1) != '%')
 		{
 			write(1, format, 1);
 			len++;
 		}
-		if (*format == '\n' && flag)
-		{
-			flag = 0;
-			write(1, format, 1);
-		}
 
 		format++;
-	}
-	if (*(p + m - 1) == '\n' && flag)
-	{
-		write(1, "\n", 1);
-		len++;
 	}
 
 	va_end(ap);
