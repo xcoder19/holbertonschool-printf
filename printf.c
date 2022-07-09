@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 				len = len + (get_op_func(k)(&ap));
 			};
 		}
-		if (*format != '%' && *(format - 1) != '%')
+		if (*format != '%' && *(format - 1) != '%' && *format != '\n')
 		{
 			write(1, format, 1);
 			len++;
