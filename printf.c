@@ -27,9 +27,10 @@ int _printf(const char *format, ...)
 				if ((get_op_func(k)) != NULL)
 					len = len + (get_op_func(k)(&ap));
 			}
-			if (*format != '%' && *(format - 1) != '%' && len++)
+			if (*format != '%' && *(format - 1) != '%')
 			{
 				write(1, format, 1);
+				len++;
 			}
 			format++;
 		}
