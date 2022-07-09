@@ -4,7 +4,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int newLine = 0;
+
 	char k;
 	va_start(ap, format);
 
@@ -13,8 +13,6 @@ int _printf(const char *format, ...)
 
 		if (*format == '%')
 		{
-
-			newLine = 1;
 
 			k = *(format + 1);
 			if ((get_op_func(k)) != NULL)
