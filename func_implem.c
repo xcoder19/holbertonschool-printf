@@ -41,8 +41,9 @@ int print_percent(va_list *ap)
 }
 
 /**
- * print_str - print str
+ * print_str - printstr
  * @ap: list
+ * Return: length of string
  */
 int print_str(va_list *ap)
 {
