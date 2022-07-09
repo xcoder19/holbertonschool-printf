@@ -38,12 +38,13 @@ int _printf(const char *format, ...)
 		}
 		if (*format == '\n' && flag)
 		{
+			flag = 0;
 			write(1, format, 1);
 		}
 
 		format++;
 	}
-	if (*(p + m - 1) == '\n')
+	if (*(p + m - 1) == '\n' && flag)
 	{
 		write(1, "\n", 1);
 		len++;
