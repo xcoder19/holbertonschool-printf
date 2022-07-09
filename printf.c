@@ -17,7 +17,10 @@ int _printf(const char *format, ...)
 			newLine = 1;
 
 			k = *(format + 1);
-			get_op_func(k)(&ap);
+			if ((get_op_func(k)) != NULL)
+			{
+				get_op_func(k)(&ap);
+			};
 		}
 		if (*format != '%' && *(format - 1) != '%')
 		{
