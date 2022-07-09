@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 		va_list ap;
 		int len = 0;
 		char k;
-		int flag = 0;
+		int *flag = 0;
 		const char *p = format;
 		int m = _strlen(format);
 
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 				k = *(format + 1);
 				if (k == '%')
 				{
-					func1(format, &flag);
+					func1(format, flag);
 				}
 				if (k == 'K' || k == '!')
 				{
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			}
 			format++;
 		}
-		if (flag && *(p + m - 1) == '\n')
+		if (*flag && *(p + m - 1) == '\n')
 		{
 			write(1, "\n", 1);
 			len++;
