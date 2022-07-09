@@ -79,5 +79,5 @@ int print_str(va_list *ap)
 
 	write(1, str, _strlen(str));
 
-	return (_strlen(str));
+	return (_strlen(str) - 1);
 }
