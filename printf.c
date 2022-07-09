@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 			write(1, format, 1);
 			len++;
 		}
-		if (*format == '\n' && flag)
+		if (*format == '\n' && !flag)
 		{
 			write(1, format, 1);
 		}
