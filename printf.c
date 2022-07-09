@@ -44,6 +44,4 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	return (len);
-
-	return (-1);
 }
