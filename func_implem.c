@@ -38,31 +38,6 @@ int print_percent(va_list *ap)
 }
 
 /**
- * print_int - print int
- * @ap:list
- */
-int print_int(va_list *ap)
-{
-	int i;
-
-	i = va_arg(*ap, int);
-
-	write(1, &i, 4);
-	return (1);
-}
-/**
- * print_float - print float
- * @ap: list
- */
-int print_float(va_list *ap)
-{
-	float f;
-
-	f = va_arg(*ap, double);
-	printf("%f", f);
-	return (1);
-}
-/**
  * print_str - print str
  * @ap: list
  */
