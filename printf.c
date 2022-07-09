@@ -56,5 +56,5 @@ int _printf(const char *format, ...)
 		return (len);
 	}
 
-	return (NULL);
+	return (-1);
 }
