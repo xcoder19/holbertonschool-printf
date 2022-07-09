@@ -21,8 +21,8 @@ int _printf(const char *format, ...)
 					flag = 1 && format++;
 				if (k == 'K' || k == '!')
 				{
-					write(1, p, _strlen(format));
-					return _strlen(format);
+					write(1, p, _strlen(p));
+					return _strlen(p);
 				}
 				if ((get_op_func(k)) != NULL)
 					len = len + (get_op_func(k)(&ap));
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			}
 			format++;
 		}
-		if (flag && *(p + _strlen(format) - 1) == '\n')
+		if (flag && *(p + _strlen(p) - 1) == '\n')
 		{
 			len++;
 			write(1, "\n", 1);
@@ -42,7 +42,6 @@ int _printf(const char *format, ...)
 		va_end(ap);
 		if (len == 0)
 			return (-1);
-
 		return (len);
 	}
 	return (-1);
