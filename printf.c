@@ -42,7 +42,6 @@ int _printf(const char *format, ...)
 		va_end(ap);
 		if (len == 0)
 			return (-1);
-
 		return (len);
 	}
 	return (-1);
