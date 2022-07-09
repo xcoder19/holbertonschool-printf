@@ -4,7 +4,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int len = 0;
+	int len = -1;
 	char k;
 
 	if (format == NULL)
@@ -42,5 +42,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(ap);
-	return (len);
+	return (len + 1);
 }
