@@ -26,6 +26,12 @@ int _printf(const char *format, ...)
 					flag = 1;
 					format++;
 				}
+				if (k == 'K' || k == '!')
+				{
+					write(1, p, m);
+
+					return m;
+				}
 				if ((get_op_func(k)) != NULL)
 				{
 
