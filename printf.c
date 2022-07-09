@@ -4,6 +4,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
+	int len = 0;
 	char k;
 	const char *p = format;
 	if (format == NULL)
@@ -23,7 +24,7 @@ int _printf(const char *format, ...)
 			if ((get_op_func(k)) != NULL)
 			{
 
-				return (get_op_func(k)(&ap));
+				len = len + (get_op_func(k)(&ap));
 			};
 		}
 		if (*format != '%' && *(format - 1) != '%')
@@ -33,11 +34,11 @@ int _printf(const char *format, ...)
 
 		format++;
 	}
-	if (*format-- == '\n')
+	if (*format == '\n')
 	{
 		write(1, "\n", 1);
 	}
 
 	va_end(ap);
-	return (_strlen(p));
+	return (_strlen(p) + len);
 }

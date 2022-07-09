@@ -48,7 +48,7 @@ int print_int(va_list *ap)
 	i = va_arg(*ap, int);
 
 	write(1, &i, 4);
-	return (0);
+	return (1);
 }
 /**
  * print_float - print float
@@ -60,7 +60,7 @@ int print_float(va_list *ap)
 
 	f = va_arg(*ap, double);
 	printf("%f", f);
-	return (0);
+	return (1);
 }
 /**
  * print_str - print str
