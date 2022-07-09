@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 					flag = 1 && format++;
 				if (k == 'K' || k == '!')
 				{
-					write(1, p, m);
+					write(1, p, _strlen(format));
 					return m;
 				}
 				if ((get_op_func(k)) != NULL)
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			}
 			format++;
 		}
-		if (flag && *(p + m - 1) == '\n')
+		if (flag && *(p + _strlen(format) - 1) == '\n')
 		{
 			len++;
 			write(1, "\n", 1);
