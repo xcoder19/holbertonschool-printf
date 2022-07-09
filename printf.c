@@ -4,8 +4,8 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-
 	char k;
+	const char *p = format;
 	if (format == NULL)
 	{
 		return (-1);
@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 			k = *(format + 1);
 			if ((get_op_func(k)) != NULL)
 			{
+
 				return (get_op_func(k)(&ap));
 			};
 		}
@@ -34,5 +35,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(ap);
-	return (0);
+	return (_strlen(p));
 }
