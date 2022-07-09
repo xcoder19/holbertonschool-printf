@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			k = *(format + 1);
 			if ((get_op_func(k)) != NULL)
 			{
-				get_op_func(k)(&ap);
+				return (get_op_func(k)(&ap));
 			};
 		}
 		if (*format != '%' && *(format - 1) != '%')
