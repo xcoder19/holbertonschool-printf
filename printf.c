@@ -6,7 +6,8 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int len = 0;
 	char k;
-	const char *p = (format + _strlen(format) - 1);
+	int m = _strlen(format);
+	const char *p = format;
 	if (format == NULL)
 	{
 		return (-1);
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 
 		format++;
 	}
-	if (*p == '\n')
+	if (*(p + m - 1) == '\n')
 	{
 		write(1, "\n", 1);
 		len++;
