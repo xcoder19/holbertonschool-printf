@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 		const char *p = format;
 
 		va_start(ap, format);
-		while (*format != '\0')
+		while (format++)
 		{
 			if (*format == '%')
 			{
@@ -32,7 +32,6 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				len++;
 			}
-			format++;
 		}
 		if (flag && *(p + _strlen(p) - 1) == '\n' && len++)
 		{
