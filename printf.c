@@ -40,5 +40,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(ap);
-	return (_strlen(p) + len);
+	return (_strlen(p) + len - 2);
 }
