@@ -5,6 +5,7 @@ int _printf(const char *format, ...)
 {
 	if (format != NULL)
 		return (-1);
+
 	va_list ap;
 	int len = 0;
 	char k;
@@ -37,7 +38,8 @@ int _printf(const char *format, ...)
 	}
 	if (flag && *(p + m - 1) == '\n')
 	{
-		len++ &&write(1, "\n", 1);
+		len++;
+		write(1, "\n", 1);
 	}
 	va_end(ap);
 	if (len == 0)
