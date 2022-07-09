@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 		}
+		if (*format == '\n')
+		{
+			write(1, "\n", 1);
+		}
 
 		format++;
 	}
