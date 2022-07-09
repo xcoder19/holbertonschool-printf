@@ -34,9 +34,8 @@ int _printf(const char *format, ...)
 			}
 			format++;
 		}
-		if (flag && *(p + _strlen(p) - 1) == '\n')
+		if (flag && *(p + _strlen(p) - 1) == '\n' && len++)
 		{
-			len++;
 			write(1, "\n", 1);
 		}
 		va_end(ap);
