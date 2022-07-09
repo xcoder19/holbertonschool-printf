@@ -6,7 +6,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int len = 0;
 	char k;
-	const char *p = format;
+
 	if (format == NULL)
 	{
 		return (-1);
