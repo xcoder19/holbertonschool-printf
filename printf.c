@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 		char k;
 		int flag = 0;
 		const char *p = format;
-		int m = _strlen(format);
 
 		va_start(ap, format);
 		while (*format != '\0')
