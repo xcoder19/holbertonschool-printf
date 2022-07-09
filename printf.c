@@ -6,9 +6,6 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int len = 0;
 	char k;
-	int m = _strlen(format);
-
-	const char *p = format;
 
 	if (format == NULL)
 	{
