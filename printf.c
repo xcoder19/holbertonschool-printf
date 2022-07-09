@@ -30,6 +30,7 @@ int _printf(const char *format, ...)
 		if (*format != '%' && *(format - 1) != '%')
 		{
 			write(1, format, 1);
+			len++;
 		}
 
 		format++;
@@ -37,8 +38,9 @@ int _printf(const char *format, ...)
 	if (*format == '\n')
 	{
 		write(1, "\n", 1);
+		len++;
 	}
 
 	va_end(ap);
-	return (_strlen(p) + len - 2);
+	return (len);
 }

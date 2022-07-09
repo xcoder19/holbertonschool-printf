@@ -74,7 +74,7 @@ int print_str(va_list *ap)
 
 	if (str == NULL)
 	{
-		str = "(nil)";
+		str = "(null)";
 	}
 
 	write(1, str, _strlen(str));
