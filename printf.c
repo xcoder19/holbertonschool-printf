@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 	char k;
 	int m = _strlen(format);
 	const char *p = format;
-	int flag = 0;
+
 	if (format == NULL)
 	{
 		return (-1);
@@ -21,7 +21,6 @@ int _printf(const char *format, ...)
 
 		if (*format == '%')
 		{
-			flag = 1;
 
 			k = *(format + 1);
 			if ((get_op_func(k)) != NULL)
@@ -38,7 +37,7 @@ int _printf(const char *format, ...)
 
 		format++;
 	}
-	if (*(p + m - 1) == '\n' && flag)
+	if (*(p + m - 1) == '\n')
 	{
 		write(1, "\n", 1);
 		len++;
