@@ -2,6 +2,7 @@
 int _strlen(const char *s)
 {
 	int i;
+
 	for (i = 0; *(s + i) != '\0'; ++i)
 		;
 
@@ -18,7 +19,7 @@ char *itoa(int val, int base)
 
 		buf[i] = "0123456789abcdef"[val % base];
 
-	return &buf[i + 1];
+	return (&buf[i + 1]);
 }
 int print_char(va_list *ap)
 {

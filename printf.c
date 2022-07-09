@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 				if (k == 'K' || k == '!')
 				{
 					write(1, p, _strlen(p));
-					return _strlen(p);
+					return (_strlen(p));
 				}
 				if ((get_op_func(k)) != NULL)
 					len = len + (get_op_func(k)(&ap));
