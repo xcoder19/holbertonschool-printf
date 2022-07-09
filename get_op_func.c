@@ -1,6 +1,6 @@
 #include "main.h"
 
-int (*get_op_func(const char s))(va_list *ap)
+int (*get_op_func(const char s))(va_list *)
 {
 
 	op_t ops[] = {
