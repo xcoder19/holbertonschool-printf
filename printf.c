@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 		const char *p = format;
 
 		va_start(ap, format);
-		while (++format)
+		while (format != '\0' && format++)
 		{
 			if (*format == '%')
 			{
