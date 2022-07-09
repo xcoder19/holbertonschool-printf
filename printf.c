@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 				k = *(format + 1);
 				if (k == '%')
 				{
-					func1(format, &flag);
+					flag = 1;
+					format++;
 				}
 				if (k == 'K' || k == '!')
 				{
