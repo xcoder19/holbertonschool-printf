@@ -3,18 +3,17 @@
 #include <string.h>
 int _printf(const char *format, ...)
 {
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	va_list ap;
 	int len = 0;
 	char k;
 	int m = _strlen(format);
 	const char *p = format;
 
-	if (format == NULL)
-	{
-		return (-1);
-	}
-
-	va_start(ap, format);
+		va_start(ap, format);
 
 	while (*format != '\0')
 	{
