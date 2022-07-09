@@ -1,4 +1,12 @@
 #include "main.h"
+int _strlen(char *s)
+{
+	int i;
+	for (i = 0; *(s + i) != '\0'; ++i)
+		;
+
+	return (i);
+}
 char *itoa(int val, int base)
 {
 
@@ -69,7 +77,7 @@ int print_str(va_list *ap)
 		str = "(nil)";
 	}
 
-	write(1, str, strlen(str));
+	write(1, str, _strlen(str));
 
-	return (0);
+	return (_strlen(str));
 }
