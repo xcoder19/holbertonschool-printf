@@ -19,10 +19,7 @@ int _printf(const char *format, ...)
 			{
 				k = *(format + 1);
 				if (k == '%')
-				{
-					flag = 1;
-					format++;
-				}
+					flag = 1 && format++;
 				if (k == 'K' || k == '!')
 				{
 					write(1, p, m);
