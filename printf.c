@@ -3,53 +3,54 @@
 #include <string.h>
 int _printf(const char *format, ...)
 {
-	if (format == NULL)
+	if (format != NULL)
 	{
-		return (-1);
-	}
-	va_list ap;
-	int len = 0;
-	char k;
-	int m = _strlen(format);
-	const char *p = format;
+
+		va_list ap;
+		int len = 0;
+		char k;
+		int m = _strlen(format);
+		const char *p = format;
 
 		va_start(ap, format);
 
-	while (*format != '\0')
-	{
-
-		if (*format == '%')
+		while (*format != '\0')
 		{
 
-			k = *(format + 1);
-			if ((get_op_func(k)) != NULL)
+			if (*format == '%')
 			{
 
-				len = len + (get_op_func(k)(&ap));
-			};
+				k = *(format + 1);
+				if ((get_op_func(k)) != NULL)
+				{
+
+					len = len + (get_op_func(k)(&ap));
+				};
+			}
+			if (*format != '%' && *(format - 1) != '%' && *format != '\n')
+			{
+				write(1, format, 1);
+				len++;
+			}
+			if (*format == '\\')
+			{
+				write(1, format, 1);
+			}
+
+			format++;
 		}
-		if (*format != '%' && *(format - 1) != '%' && *format != '\n')
+		if (*(p + m - 1) == '\n')
 		{
-			write(1, format, 1);
+			write(1, "\n", 1);
 			len++;
 		}
-		if (*format == '\\')
+
+		va_end(ap);
+		if (len == 0)
 		{
-			write(1, format, 1);
+			return (-1);
 		}
-
-		format++;
+		return (len);
 	}
-	if (*(p + m - 1) == '\n')
-	{
-		write(1, "\n", 1);
-		len++;
-	}
-
-	va_end(ap);
-	if (len == 0)
-	{
-		return (-1);
-	}
-	return (len);
+	return (NULL);
 }
