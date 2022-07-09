@@ -3,13 +3,14 @@
 #include <string.h>
 int _printf(const char *format, ...)
 {
+	va_list ap;
+
+	char k;
 	if (format == NULL)
 	{
 		return (0);
 	}
-	va_list ap;
 
-	char k;
 	va_start(ap, format);
 
 	while (*format != '\0')
