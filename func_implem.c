@@ -64,19 +64,21 @@ int print_str(va_list *ap)
 int print_int(va_list *ap)
 {
 	int i;
+	int flag;
 	char *p = "";
 	i = va_arg(*ap, int);
 
 	if (i < 0)
 	{
+		flag = 1;
 		i = -i;
 		putchar('-');
 	}
 	p = convert(i, 10);
 	puts2(p);
-	if (i == -i)
+	if (flag)
 	{
-		return (_strlen(p) - 1);
+		return (_strlen(p) + 1);
 	}
 	return (_strlen(p));
 }
