@@ -71,6 +71,7 @@ int print_int(va_list *ap)
 		putchar('-');
 	}
 	puts(convert(i, 10));
+	return (1);
 }
 
 char *convert(unsigned int num, int base)
