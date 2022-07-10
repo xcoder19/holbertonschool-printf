@@ -71,10 +71,10 @@ int print_int(va_list *ap)
 	{
 		i = -i;
 		putchar('-');
-		puts2(p);
-		return (_strlen(p) + 1);
 	}
+
 	puts2(p);
+
 	return (_strlen(p));
 }
 
