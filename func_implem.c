@@ -72,37 +72,28 @@ int print_int(va_list *ap)
 	return (strlen(p));
 }
 
-size_t IntToString(char *s, int x)
+void IntToString(char *s, int x)
 {
-	//  Set pointer to current position.
 	char *p = s;
-
-	//  Set t to absolute value of x.
 	unsigned t = x;
+	char t;
+
 	if (x < 0)
 		t = -t;
 
-	//  Write digits.
 	do
 	{
 		*p++ = '0' + t % 10;
 		t /= 10;
 	} while (t);
 
-	//  If x is negative, write sign.
 	if (x < 0)
 		*p++ = '-';
 
-	//  Remember the return value, the number of characters written.
-	size_t r = p - s;
-
-	//  Since we wrote the characters in reverse order, reverse them.
 	while (s < --p)
 	{
-		char t = *s;
+		t = *s;
 		*s++ = *p;
 		*p = t;
 	}
-
-	return r;
 }
