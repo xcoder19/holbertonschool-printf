@@ -70,7 +70,7 @@ int print_int(va_list *ap)
 		i = -i;
 		putchar('-');
 	}
-	puts(convert(i, 10));
+	puts2(convert(i, 10));
 	return (1);
 }
 
@@ -90,4 +90,17 @@ char *convert(unsigned int num, int base)
 	} while (num != 0);
 
 	return (ptr);
+}
+void puts2(char *str)
+{
+
+	int i;
+
+	for (i = 0; *(str + i) != '\0'; ++i)
+	{
+		if (i % 2 == 0)
+		{
+			putchar(str[i]);
+		}
+	}
 }
