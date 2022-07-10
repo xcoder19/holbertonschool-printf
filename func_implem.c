@@ -69,7 +69,7 @@ int print_int(va_list *ap)
 	i = va_arg(*ap, int);
 	IntToString(p, i);
 	write(1, p, _strlen(p));
-	return (1);
+	return (strlen(p));
 }
 
 size_t IntToString(char *s, int x)
