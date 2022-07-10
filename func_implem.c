@@ -64,14 +64,17 @@ int print_str(va_list *ap)
 int print_int(va_list *ap)
 {
 	int i;
+	char *p = "";
 	i = va_arg(*ap, int);
 	if (i < 0)
 	{
 		i = -i;
 		putchar('-');
 	}
-	puts2(convert(i, 10));
-	return (1);
+	p = convert(i, 10);
+	puts2(p);
+
+	return (_strlen(p) - 1);
 }
 
 char *convert(unsigned int num, int base)
