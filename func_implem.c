@@ -76,7 +76,6 @@ void IntToString(char *s, int x)
 {
 	char *p = s;
 	unsigned t = x;
-	char tt;
 
 	if (x < 0)
 		t = -t;
@@ -92,7 +91,7 @@ void IntToString(char *s, int x)
 
 	while (s < --p)
 	{
-		tt = *s;
+
 		*s++ = *p;
 		*p = t;
 	}
