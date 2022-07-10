@@ -66,15 +66,18 @@ int print_int(va_list *ap)
 	int i;
 	char *p = "";
 	i = va_arg(*ap, int);
-	p = convert(i, 10);
+
 	if (i < 0)
 	{
 		i = -i;
 		putchar('-');
 	}
-
+	p = convert(i, 10);
 	puts2(p);
-
+	if (i == -i)
+	{
+		return (_strlen(p) + 1);
+	}
 	return (_strlen(p));
 }
 
