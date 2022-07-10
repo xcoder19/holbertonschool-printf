@@ -74,7 +74,7 @@ int print_int(va_list *ap)
 	p = convert(i, 10);
 	puts2(p);
 
-	return (_strlen(p) - 1);
+	return (_strlen(p));
 }
 
 char *convert(unsigned int num, int base)
