@@ -67,32 +67,25 @@ int print_int(va_list *ap)
 	int i;
 	char *p = "";
 	i = va_arg(*ap, int);
-	IntToString(p, i);
+	p = convert(i, 10);
 	write(1, p, _strlen(p));
 	return (strlen(p));
 }
 
-void IntToString(char *s, int x)
+char *convert(unsigned int num, int base)
 {
-	char *p = s;
-	unsigned t = x;
+	static char Representation[] = "0123456789ABCDEF";
+	static char buffer[50];
+	char *ptr;
 
-	if (x < 0)
-		t = -t;
+	ptr = &buffer[49];
+	*ptr = '\0';
 
 	do
 	{
-		*p++ = '0' + t % 10;
-		t /= 10;
-	} while (t);
+		*--ptr = Representation[num % base];
+		num /= base;
+	} while (num != 0);
 
-	if (x < 0)
-		*p++ = '-';
-
-	while (s < --p)
-	{
-
-		*s++ = *p;
-		*p = t;
-	}
+	return (ptr);
 }
