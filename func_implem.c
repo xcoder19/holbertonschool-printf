@@ -63,13 +63,14 @@ int print_str(va_list *ap)
 
 int print_int(va_list *ap)
 {
-
-	int i;
-	char *p = "";
+	unsigned int i;
 	i = va_arg(*ap, int);
-	p = convert(i, 10);
-	write(1, p, _strlen(p));
-	return (strlen(p));
+	if (i < 0)
+	{
+		i = -i;
+		putchar('-');
+	}
+	puts(convert(i, 10));
 }
 
 char *convert(unsigned int num, int base)
