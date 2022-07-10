@@ -76,7 +76,7 @@ int print_int(va_list *ap)
 	puts2(p);
 	if (i == -i)
 	{
-		return (_strlen(p) + 1);
+		return (_strlen(p) - 1);
 	}
 	return (_strlen(p));
 }
