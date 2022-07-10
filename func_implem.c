@@ -63,7 +63,7 @@ int print_str(va_list *ap)
 
 int print_int(va_list *ap)
 {
-	unsigned int i;
+	int i;
 	i = va_arg(*ap, int);
 	if (i < 0)
 	{
