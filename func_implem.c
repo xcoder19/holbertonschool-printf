@@ -47,7 +47,11 @@ int print_str(va_list *ap)
 
 	return (_strlen(str));
 }
-
+/**
+ * print_int - prints integer
+ * @ap: valist
+ * Return: integer
+ */
 int print_int(va_list *ap)
 {
 	int i;
@@ -70,7 +74,12 @@ int print_int(va_list *ap)
 	}
 	return (_strlen(p));
 }
-
+/**
+ * convert - converts number into string
+ * @num: num
+ * @base: base
+ * Retunr: string
+ */
 char *convert(unsigned int num, int base)
 {
 	char Representation[] = "0123456789ABCDEF";
