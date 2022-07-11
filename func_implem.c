@@ -72,7 +72,7 @@ int print_int(va_list *ap)
 	{
 		flag = 1;
 		i = -i;
-		putchar('-');
+		write(1, "-", 1);
 	}
 	p = convert(i, 10);
 	puts2(p);
