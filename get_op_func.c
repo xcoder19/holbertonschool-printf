@@ -10,6 +10,7 @@ int (*get_op_func(const char s))(va_list *)
 	op_t ops[] = {
 		{"c", print_char},
 		{"d", print_int},
+		{"i", print_integer},
 		{"%", print_percent},
 		{"s", print_str},
 
