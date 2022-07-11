@@ -78,7 +78,7 @@ int print_int(va_list *ap)
  * convert - converts number into string
  * @num: num
  * @base: base
- * Retunr: string
+ * Return: string
  */
 char *convert(unsigned int num, int base)
 {
