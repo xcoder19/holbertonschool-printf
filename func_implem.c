@@ -93,7 +93,7 @@ int print_integer(va_list *ap)
 	{
 		flag = 1;
 		i = -i;
-		putchar('-');
+		write(1, "-", 1);
 	}
 	p = convert(i, 10);
 	puts2(p);
@@ -124,11 +124,5 @@ char *convert(unsigned int num, int base)
 void puts2(char *str)
 {
 
-	int i;
-
-	for (i = 0; *(str + i) != '\0'; ++i)
-	{
-
-		putchar(str[i]);
-	}
+		write(1, str, _strlen(str));
 }
