@@ -1,18 +1,5 @@
 #include "main.h"
-/**
- * _strlen - count length of string
- * @s: pointer to string
- * Return: count
- */
-int _strlen(const char *s)
-{
-	int i;
 
-	for (i = 0; *(s + i) != '\0'; ++i)
-		;
-
-	return (i);
-}
 /**
  * print_char - print char
  * @ap: valist
@@ -66,6 +53,7 @@ int print_int(va_list *ap)
 	int i;
 	int flag = 0;
 	char *p = "";
+
 	i = va_arg(*ap, int);
 
 	if (i < 0)
@@ -75,28 +63,7 @@ int print_int(va_list *ap)
 		write(1, "-", 1);
 	}
 	p = convert(i, 10);
-	puts2(p);
-	if (flag)
-	{
-		return (_strlen(p) + 1);
-	}
-	return (_strlen(p));
-}
-int print_integer(va_list *ap)
-{
-	int i;
-	int flag = 0;
-	char *p = "";
-	i = va_arg(*ap, int);
-
-	if (i < 0)
-	{
-		flag = 1;
-		i = -i;
-		write(1, "-", 1);
-	}
-	p = convert(i, 10);
-	puts2(p);
+	write(1, p, _strlen(p));
 	if (flag)
 	{
 		return (_strlen(p) + 1);
@@ -120,9 +87,4 @@ char *convert(unsigned int num, int base)
 	} while (num != 0);
 
 	return (ptr);
-}
-void puts2(char *str)
-{
-
-	write(1, str, _strlen(str));
 }

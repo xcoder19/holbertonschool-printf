@@ -49,3 +49,18 @@ int _printf(const char *format, ...)
 	}
 	return (-1);
 }
+
+/**
+ * _strlen - count length of string
+ * @s: pointer to string
+ * Return: count
+ */
+int _strlen(const char *s)
+{
+	int i;
+
+	for (i = 0; *(s + i) != '\0'; ++i)
+		;
+
+	return (i);
+}

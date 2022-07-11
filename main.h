@@ -21,7 +21,6 @@ int _printf(const char *format, ...);
 char *convert(unsigned int num, int base);
 int print_char(va_list *ap);
 int print_int(va_list *ap);
-int print_integer(va_list *ap);
 int print_float(va_list *ap);
 int print_str(va_list *ap);
 int print_percent(va_list *ap);
