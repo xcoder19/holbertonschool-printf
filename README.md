@@ -1,6 +1,6 @@
-#Printf
+##Printf
 
-this is the implementation of the printf function
+##this is the implementation of the printf function
 
 ## Usage && Examples
 
