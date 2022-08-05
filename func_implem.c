@@ -59,14 +59,13 @@ int print_int(va_list *ap)
 
 	i = va_arg(*ap, int);
 
-	len = strlen(convert(i, 10));
 	if (i < 0)
 	{
 		flag = 1;
 		i = -i;
 		write(1, "-", 1);
 	}
-
+	len = strlen(convert(i, 10));
 	write(1, convert(i, 10), len);
 
 	if (flag)
