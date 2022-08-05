@@ -54,25 +54,27 @@ int print_str(va_list *ap)
  */
 int print_int(va_list *ap)
 {
-	int i;
+	int i, len;
 	int flag = 0;
-	char *p = "";
-
+	char *p;
 	i = va_arg(*ap, int);
 
+	len = strlen(convert(i, 10));
 	if (i < 0)
 	{
 		flag = 1;
 		i = -i;
 		write(1, "-", 1);
 	}
-	p = convert(i, 10);
-	write(1, p, _strlen(p));
+
+	write(1, convert(i, 10), len);
+
 	if (flag)
 	{
-		return (_strlen(p) + 1);
+		return (len + 1);
 	}
-	return (_strlen(p));
+
+	return (len);
 }
 /**
  * convert - converts number into string
