@@ -56,7 +56,7 @@ int print_int(va_list *ap)
 {
 	int i, len;
 	int flag = 0;
-	char *p;
+
 	i = va_arg(*ap, int);
 
 	len = strlen(convert(i, 10));
