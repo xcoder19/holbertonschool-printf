@@ -103,6 +103,7 @@ char *convert(unsigned int num, int base)
 /**
  * print_binary - convert decimal to binary
  * @n: decimal
+ * Return: count
  */
 int print_binary(va_list *ap)
 {
