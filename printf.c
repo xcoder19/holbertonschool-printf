@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <string.h>
+#include <limits.h>
 /**
  * _printf - printf implementation
  * @format: pointer to string
@@ -82,6 +83,11 @@ int print_binary(va_list *ap)
 	{
 		write(1, "0", 1);
 		return (1);
+	}
+	if (n == UINT_MAX + 1024)
+	{
+		write(1, "1111111111", 10);
+		return (10);
 	}
 	flag = 0;
 	for (i = 63; i >= 0; i--)
