@@ -13,6 +13,7 @@ int (*get_op_func(const char s))(va_list *)
 		{"i", print_int},
 		{"%", print_percent},
 		{"s", print_str},
+		{"b", print_binary},
 
 		{NULL, NULL}};
 
