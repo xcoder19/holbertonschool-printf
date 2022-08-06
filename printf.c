@@ -67,7 +67,7 @@ int _strlen(const char *s)
 
 /**
  * print_binary - convert decimal to binary
- * @n: decimal
+ * @ap: va_list
  * Return: count
  */
 int print_binary(va_list *ap)
