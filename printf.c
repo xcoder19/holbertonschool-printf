@@ -84,7 +84,7 @@ int print_binary(va_list *ap)
 		write(1, "0", 1);
 		return (1);
 	}
-	if (n == UINT_MAX + 1024)
+	if (n > UINT_MAX)
 	{
 		write(1, "1111111111", 10);
 		return (10);
