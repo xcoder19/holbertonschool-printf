@@ -20,7 +20,6 @@ int print_char(va_list *ap)
  */
 int print_percent(va_list *ap)
 {
-
 	(void)ap;
 
 	write(1, "%", 1);

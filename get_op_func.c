@@ -6,7 +6,6 @@
  */
 int (*get_op_func(const char s))(va_list *)
 {
-
 	op_t ops[] = {
 		{"c", print_char},
 		{"d", print_int},
@@ -23,7 +22,6 @@ int (*get_op_func(const char s))(va_list *)
 
 	while (ops[i].op)
 	{
-
 		if (strchr(ops[i].op, s) == ops[i].op)
 		{
 			return (ops[i].f);
