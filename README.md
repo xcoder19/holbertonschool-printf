@@ -45,6 +45,6 @@ Below a list of the used files during project:
 
 - (https://github.com/xcoder19)
 
-**dhafer hamaza**
+**dhafer hamza**
 
 - (https://github.com/dhaferhs)
